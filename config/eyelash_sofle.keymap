@@ -46,22 +46,13 @@
         tap-ms = <30>;
     };
 
-    tap_dance_a: tap_dance_a {
-        compatible = "zmk,behavior-tap-dance";
-        label = "TAP_DANCE_A";
-        #binding-cells = <0>;
-        bindings = <&kp A>, <&kp APOS>;
-
-        tapping-term-ms = <100>;
-    };
-
     tap_dance_e: tap_dance_e {
         compatible = "zmk,behavior-tap-dance";
         label = "TAP_DANCE_E";
         #binding-cells = <0>;
         bindings = <&kp E>, <&kp SEMI>;
 
-        tapping-term-ms = <100>;
+        tapping-term-ms = <50>;
     };
 
     tap_dance_i: tap_dance_i {
@@ -70,7 +61,7 @@
         #binding-cells = <0>;
         bindings = <&kp I>, <&kp NUBS>;
 
-        tapping-term-ms = <100>;
+        tapping-term-ms = <50>;
     };
 
     tap_dance_u: tap_dance_u {
@@ -110,12 +101,39 @@
         tapping-term-ms = <30>;
     };
 
+    tap_dance_a: tap_dance_a {
+        compatible = "zmk,behavior-tap-dance";
+        label = "TAP_DANCE_A";
+        #binding-cells = <0>;
+        bindings = <&kp A>, <&kp APOS>;
+
+        tapping-term-ms = <50>;
+    };
+
     combos {
         compatible = "zmk,combos";
 
         right_enter {
             bindings = <&kp ENTER>;
             key-positions = <38 51>;
+            slow-release;
+            layers = <0 1>;
+        };
+
+        toggle_stuff {
+            bindings = <&tog 3>;
+            key-positions = <60 12>;
+            layers = <0 3>;
+            require-prior-idle-ms = <200>;
+            timeout-ms = <100>;
+            slow-release;
+        };
+
+        proglayer_hold {
+            bindings = <&mo 1>;
+            key-positions = <26 56>;
+            slow-release;
+            layers = <0 1>;
         };
     };
 
@@ -127,18 +145,18 @@
 
         layer0 {
             bindings = <
-&kp ESC     &kp N0             &kp N1        &kp N2             &kp N3  &kp N4       &kp UP_ARROW     &kp N5     &kp NUMBER_6  &kp N7             &kp N8           &kp N9      &kp BACKSPACE
-&kp TAB     &kp Q              &kp W         &holdtap_2 SEMI E  &kp R   &kp T        &kp DOWN_ARROW   &kp Y      &tap_dance_u  &holdtap_2 NUBS I  &tap_dance_o     &kp P       &kp BSLH
-&kp CAPS    &holdtap_2 APOS A  &kp S         &kp D              &kp F   &kp G        &kp LEFT_ARROW   &kp H      &kp J         &kp K              &kp L            &kp SEMI    &kp APOS
-&kp LSHFT   &kp Z              &kp X         &kp C              &kp V   &kp B        &kp RIGHT_ARROW  &kp N      &kp M         &kp COMMA          &kp DOT          &kp FSLH    &kp ENTER
-&kp C_MUTE  &kp LCTRL          &kp LEFT_GUI  &tap_dance_alt     &mo 2   &kp SPACE    &kp ENTER        &kp SPACE  &sl 3         &tap_dance_alt     &kp RIGHT_SHIFT  &kp DELETE
+&kp ESC     &kp N0        &kp N1        &kp N2          &kp N3  &kp N4       &kp UP_ARROW     &kp N5     &kp NUMBER_6  &kp N7             &kp N8           &kp N9         &kp BACKSPACE
+&kp TAB     &kp Q         &kp W         &tap_dance_e    &kp R   &kp T        &kp DOWN_ARROW   &kp Y      &tap_dance_u  &holdtap_2 NUBS I  &tap_dance_o     &kp P          &kp BSLH
+&kp CAPS    &tap_dance_a  &kp S         &kp D           &kp F   &kp G        &kp LEFT_ARROW   &kp H      &kp J         &kp K              &kp L            &kp SEMI       &kp APOS
+&kp LSHFT   &kp Z         &kp X         &kp C           &kp V   &kp B        &kp RIGHT_ARROW  &kp N      &kp M         &kp COMMA          &kp DOT          &kp FSLH       &kp ENTER
+&kp C_MUTE  &kp LCTRL     &kp LEFT_GUI  &tap_dance_alt  &mo 2   &kp SPACE    &kp ENTER        &kp SPACE  &sl 3         &tap_dance_alt     &kp RIGHT_SHIFT  &kp BACKSPACE
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
             display-name = "base_layer";
         };
 
-        layer_3 {
+        coding {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
@@ -153,7 +171,7 @@
         layer_1 {
             bindings = <
 &kp F1      &kp F2           &kp F3          &kp F4           &kp F5           &kp F6             &mmv MOVE_UP     &kp F7           &kp F8           &kp F9      &kp F10    &kp F11           &kp F12
-&trans      &kp GRAVE        &mkp LCLK       &mkp MCLK        &mkp RCLK        &mkp MB4           &mmv MOVE_DOWN   &kp PG_UP        &kp END          &kp UP      &kp HOME   &kp MINUS         &kp EQUAL
+&trans      &mkp LCLK        &mkp MCLK       &mkp RCLK        &mkp RCLK        &mkp MB4           &mmv MOVE_DOWN   &kp PG_UP        &kp END          &kp UP      &kp HOME   &kp MINUS         &kp EQUAL
 &trans      &kp TILDE        &trans          &trans           &trans           &mkp MB5           &mmv MOVE_LEFT   &kp PG_DN        &kp LEFT         &kp DOWN    &kp RIGHT  &kp LEFT_BRACKET  &kp RIGHT_BRACKET
 &trans      &rgb_ug RGB_OFF  &rgb_ug RGB_ON  &rgb_ug RGB_EFF  &rgb_ug RGB_EFR  &rgb_ug RGB_SPI    &mmv MOVE_RIGHT  &rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &kp INSERT  &kp F11    &kp F12           &trans
 &kp C_MUTE  &trans           &trans          &trans           &trans           &trans             &mkp LCLK        &trans           &trans           &trans      &trans     &trans
@@ -163,10 +181,10 @@
             sensor-bindings = <&scroll_encoder>;
         };
 
-        layer_2 {
+        kb_controls {
             bindings = <
-&kp TILDE  &bt BT_SEL 0  &bt BT_SEL 1    &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &mmv MOVE_UP     &kp F6  &kp F7  &kp F8      &kp F9     &kp F10      &trans
-&trans     &bt BT_CLR    &bt BT_CLR_ALL  &trans        &trans        &trans          &mmv MOVE_DOWN   &trans  &trans  &kp F11     &kp F12    &kp UNDER    &kp PLUS
+&kp TILDE  &bt BT_SEL 0  &bt BT_SEL 1    &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &mmv MOVE_UP     &trans  &trans  &trans      &trans     &trans       &trans
+&trans     &bt BT_CLR    &bt BT_CLR_ALL  &trans        &trans        &trans          &mmv MOVE_DOWN   &trans  &trans  &trans      &trans     &kp UNDER    &kp PLUS
 &trans     &out OUT_USB  &out OUT_BLE    &trans        &trans        &trans          &mmv MOVE_LEFT   &trans  &trans  &trans      &trans     &kp LBRC     &kp RBRC
 &trans     &sys_reset    &trans          &bootloader   &trans        &trans          &mmv MOVE_RIGHT  &trans  &trans  &sys_reset  &soft_off  &bootloader  &trans
 &trans     &trans        &trans          &trans        &trans        &trans          &mkp LCLK        &trans  &trans  &trans      &trans     &trans
