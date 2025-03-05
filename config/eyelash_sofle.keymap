@@ -50,7 +50,7 @@
         #binding-cells = <0>;
         bindings = <&kp E>, <&kp SEMI>;
 
-        tapping-term-ms = <50>;
+        tapping-term-ms = <30>;
     };
 
     tap_dance_i: tap_dance_i {
@@ -59,23 +59,23 @@
         #binding-cells = <0>;
         bindings = <&kp I>, <&kp NUBS>;
 
-        tapping-term-ms = <50>;
+        tapping-term-ms = <30>;
     };
 
     tap_dance_u: tap_dance_u {
         compatible = "zmk,behavior-tap-dance";
         label = "TAP_DANCE_U";
         #binding-cells = <0>;
-        bindings = <&holdtap_2 RIGHT_BRACE U>, <&holdtap_2 NUHS MINUS>;
+        bindings = <&kp U>, <&kp RIGHT_BRACE>;
 
-        tapping-term-ms = <50>;
+        tapping-term-ms = <30>;
     };
 
     tap_dance_o: tap_dance_o {
         compatible = "zmk,behavior-tap-dance";
         label = "TAP_DANCE_O";
         #binding-cells = <0>;
-        bindings = <&holdtap_2 EQUAL O>, <&holdtap_2 LEFT_BRACE N0>;
+        bindings = <&kp O>, <&kp EQUAL>;
 
         tapping-term-ms = <30>;
     };
@@ -117,13 +117,31 @@
         tapping-term-ms = <200>;
     };
 
-    tap_navi_numpad: tap_navi_numpad {
+    tap_num_navi: tap_num_navi {
         compatible = "zmk,behavior-tap-dance";
-        label = "TAP_NAVI_NUMPAD";
+        label = "TAP_NUM_NAVI";
         #binding-cells = <0>;
-        bindings = <&mo 3>, <&mo 5>;
+        bindings = <&numpad_numlock>, <&mo 4>;
 
         tapping-term-ms = <75>;
+    };
+
+    tap_hun_o: tap_hun_o {
+        compatible = "zmk,behavior-tap-dance";
+        label = "TAP_HUN_O";
+        #binding-cells = <0>;
+        bindings = <&kp N0>, <&kp LEFT_BRACE>;
+
+        tapping-term-ms = <30>;
+    };
+
+    tap_hun_u: tap_hun_u {
+        compatible = "zmk,behavior-tap-dance";
+        label = "TAP_HUN_U";
+        #binding-cells = <0>;
+        bindings = <&kp MINUS>, <&kp NUHS>;
+
+        tapping-term-ms = <30>;
     };
 
     combos {
@@ -133,23 +151,23 @@
             bindings = <&kp ENTER>;
             key-positions = <38 51>;
             slow-release;
-            layers = <0 2 1>;
+            layers = <0 3 1>;
         };
 
         toggle_controls {
-            bindings = <&tog 4>;
+            bindings = <&tog 5>;
             key-positions = <60 12 56 0>;
-            layers = <0 4>;
+            layers = <0 5>;
             require-prior-idle-ms = <200>;
             timeout-ms = <100>;
             slow-release;
         };
 
         proglayer_mo {
-            bindings = <&mo 2>;
+            bindings = <&mo 3>;
             key-positions = <56 39>;
             slow-release;
-            layers = <0 2>;
+            layers = <0 3>;
         };
 
         toggle_gaming {
@@ -157,7 +175,7 @@
             key-positions = <56 14 15 16>;
             slow-release;
             layers = <1 0>;
-            timeout-ms = <40>;
+            timeout-ms = <50>;
             require-prior-idle-ms = <200>;
         };
 
@@ -165,40 +183,77 @@
             bindings = <&sk LSHIFT>;
             key-positions = <27 28>;
             layers = <0>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <100>;
         };
 
         homerow_lctrl {
             bindings = <&sk LCTRL>;
             key-positions = <28 29>;
             layers = <0>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <100>;
         };
 
         hoemrow_lctrl_lshift {
             bindings = <&sk LS(LCTRL)>;
             key-positions = <27 28 29>;
             layers = <0>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <100>;
         };
 
         homerow_rctrl {
             bindings = <&sk RCTRL>;
             key-positions = <36 35>;
             layers = <0>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <100>;
         };
 
         homerow_rshift {
             bindings = <&sk RSHIFT>;
             key-positions = <36 37>;
             layers = <0>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <100>;
         };
 
         homerow_rctrl_rshift {
             bindings = <&sk RS(RCTRL)>;
             key-positions = <35 36 37>;
             layers = <0>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <100>;
+        };
+
+        prog_eq {
+            bindings = <&kp LS(N7)>;
+            key-positions = <14 16>;
+            layers = <0 3>;
+            require-prior-idle-ms = <100>;
+            timeout-ms = <30>;
         };
     };
 
     behaviors {
+    };
+
+    macros {
+        numpad_numlock: numpad_numlock {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp KP_NUMLOCK &mo 2>,
+                <&macro_pause_for_release>,
+                <&macro_press>,
+                <&kp KP_NUMLOCK>,
+                <&macro_release>,
+                <&mo 2>;
+
+            label = "NUMPAD_NUMLOCK";
+        };
     };
 
     keymap {
@@ -206,11 +261,11 @@
 
         base {
             bindings = <
-&kp ESC     &kp N0        &kp N1        &kp N2          &kp N3            &kp N4       &kp UP_ARROW     &kp N5     &kp NUMBER_6  &kp N7          &kp N8           &kp N9         &kp BACKSPACE
-&kp TAB     &kp Q         &kp W         &tap_dance_e    &kp R             &kp T        &kp DOWN_ARROW   &kp Y      &tap_dance_u  &tap_dance_i    &tap_dance_o     &kp P          &kp BSLH
-&kp CAPS    &tap_dance_a  &kp S         &kp D           &kp F             &kp G        &kp LEFT_ARROW   &kp H      &kp J         &kp K           &kp L            &kp SEMI       &kp APOS
-&kp LSHFT   &kp Z         &kp X         &kp C           &kp V             &kp B        &kp RIGHT_ARROW  &kp N      &kp M         &kp COMMA       &kp DOT          &kp FSLH       &kp ENTER
-&kp C_MUTE  &kp LCTRL     &kp LEFT_GUI  &tap_dance_alt  &tap_navi_numpad  &kp SPACE    &kp ENTER        &kp SPACE  &sl 4         &tap_dance_alt  &kp RIGHT_SHIFT  &kp BACKSPACE
+&kp ESC     &kp GRAVE     &kp N1        &kp N2          &kp N3         &kp N4       &kp UP_ARROW     &kp N5         &kp NUMBER_6  &kp N7          &kp N8           &kp N9             &tap_hun_o
+&kp TAB     &kp Q         &kp W         &tap_dance_e    &kp R          &kp T        &kp DOWN_ARROW   &kp Y          &tap_dance_u  &tap_dance_i    &tap_dance_o     &kp P              &tap_hun_u
+&kp CAPS    &tap_dance_a  &kp S         &kp D           &kp F          &kp G        &kp LEFT_ARROW   &kp H          &kp J         &kp K           &kp L            &kp SEMI           &kp APOS
+&kp LSHFT   &kp Z         &kp X         &kp C           &kp V          &kp B        &kp RIGHT_ARROW  &kp N          &kp M         &kp COMMA       &kp DOT          &kp FSLH           &kp ENTER
+&kp C_MUTE  &kp LCTRL     &kp LEFT_GUI  &tap_dance_alt  &tap_num_navi  &kp SPACE    &kp ENTER        &kp BACKSPACE  &kp DELETE    &tap_dance_alt  &kp RIGHT_SHIFT  &kp LC(BACKSPACE)
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
@@ -220,14 +275,26 @@
         gaming {
             display-name = "gaming";
             bindings = <
-&kp ESC     &kp N0     &kp N1        &kp N2          &kp N3  &kp N4       &kp UP_ARROW     &kp N5    &kp NUMBER_6  &kp N7          &kp N8           &kp N9         &kp BACKSPACE
-&kp TAB     &kp Q      &kp W         &kp E           &kp R   &kp T        &kp DOWN_ARROW   &kp Y     &kp U         &kp I           &kp O            &kp P          &kp BSLH
-&kp CAPS    &kp A      &kp S         &kp D           &kp F   &kp G        &kp LEFT_ARROW   &kp H     &kp J         &kp K           &kp L            &kp SEMI       &kp APOS
-&kp LSHFT   &kp Z      &kp X         &kp C           &kp V   &kp B        &kp RIGHT_ARROW  &kp N     &kp M         &kp COMMA       &kp DOT          &kp FSLH       &kp ENTER
-&kp C_MUTE  &kp LCTRL  &kp LEFT_GUI  &tap_dance_alt  &mo 3   &kp SPACE    &kp ENTER        &kp BSPC  &kp DEL       &tap_dance_alt  &kp RIGHT_SHIFT  &kp BACKSPACE
+&kp ESC     &kp N0     &kp N1        &kp N2          &kp N3  &kp N4       &kp UP_ARROW     &kp N5    &kp NUMBER_6  &kp N7          &kp N8           &kp N9             &kp BACKSPACE
+&kp TAB     &kp Q      &kp W         &kp E           &kp R   &kp T        &kp DOWN_ARROW   &kp Y     &kp U         &kp I           &kp O            &kp P              &kp BSLH
+&kp CAPS    &kp A      &kp S         &kp D           &kp F   &kp G        &kp LEFT_ARROW   &kp H     &kp J         &kp K           &kp L            &kp SEMI           &kp APOS
+&kp LSHFT   &kp Z      &kp X         &kp C           &kp V   &kp B        &kp RIGHT_ARROW  &kp N     &kp M         &kp COMMA       &kp DOT          &kp FSLH           &kp ENTER
+&kp C_MUTE  &kp LCTRL  &kp LEFT_GUI  &tap_dance_alt  &mo 4   &kp SPACE    &kp ENTER        &kp BSPC  &kp DEL       &tap_dance_alt  &kp RIGHT_SHIFT  &kp LC(BACKSPACE)
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
+        };
+
+        numpad {
+            bindings = <
+&trans  &trans     &trans    &trans     &trans  &trans    &trans  &trans                                               &trans     &kp KP_DIVIDE                &kp KP_MULTIPLY  &holdtap_2 LS(SLASH) LS(KP_MINUS)  &trans
+&trans  &kp RA(B)  &kp UP    &kp RA(N)  &trans  &trans    &trans  &holdtap_2 KP_RIGHT_PARENTHESIS KP_LEFT_PARENTHESIS  &kp KP_N7  &kp KP_N8                    &kp KP_N9        &kp KP_PLUS                        &trans
+&trans  &kp LEFT   &kp DOWN  &kp RIGHT  &trans  &trans    &trans  &trans                                               &kp KP_N4  &kp KP_N5                    &kp KP_N6        &kp KP_EQUAL                       &trans
+&trans  &trans     &trans    &trans     &trans  &trans    &trans  &trans                                               &kp KP_N1  &kp KP_N2                    &kp KP_N3        &trans                             &trans
+&trans  &trans     &trans    &trans     &trans  &trans    &trans  &trans                                               &trans     &holdtap_2 RA(PERIOD) RA(M)  &kp KP_N0        &kp KP_DOT
+            >;
+
+            sensor-bindings = <&inc_dec_kp 0 0>;
         };
 
         coding {
@@ -265,16 +332,6 @@
             >;
 
             sensor-bindings = <&scroll_encoder>;
-        };
-
-        numpad {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp KP_NUMLOCK  &trans     &trans     &trans     &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans          &kp KP_N7  &kp KP_N8  &kp KP_N9  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans          &kp KP_N4  &kp KP_N5  &kp KP_N6  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans          &kp KP_N1  &kp KP_N2  &kp KP_N3  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans          &trans     &trans     &kp KP_N0  &trans
-            >;
         };
     };
 };
