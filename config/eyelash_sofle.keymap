@@ -142,7 +142,7 @@
         #binding-cells = <0>;
         bindings = <&kp MINUS>, <&kp NUHS>;
 
-        tapping-term-ms = <30>;
+        tapping-term-ms = <80>;
     };
 
     combos {
@@ -165,7 +165,7 @@
         };
 
         proglayer_tog {
-            bindings = <&tog 3>;
+            bindings = <&motog_layer 3 3>;
             key-positions = <56 39>;
             slow-release;
             layers = <0 3>;
