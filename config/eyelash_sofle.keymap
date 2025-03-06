@@ -87,7 +87,7 @@
         #binding-cells = <0>;
         bindings = <&kp E>, <&kp SEMI>;
 
-        tapping-term-ms = <30>;
+        tapping-term-ms = <80>;
     };
 
     tap_dance_i: tap_dance_i {
@@ -96,7 +96,7 @@
         #binding-cells = <0>;
         bindings = <&kp I>, <&kp NUBS>;
 
-        tapping-term-ms = <30>;
+        tapping-term-ms = <80>;
     };
 
     tap_dance_u: tap_dance_u {
@@ -105,7 +105,7 @@
         #binding-cells = <0>;
         bindings = <&kp U>, <&kp RIGHT_BRACE>;
 
-        tapping-term-ms = <30>;
+        tapping-term-ms = <80>;
     };
 
     tap_dance_o: tap_dance_o {
@@ -114,7 +114,7 @@
         #binding-cells = <0>;
         bindings = <&kp O>, <&kp EQUAL>;
 
-        tapping-term-ms = <30>;
+        tapping-term-ms = <80>;
     };
 
     tap_dance_alt: tap_dance_alt {
@@ -133,7 +133,8 @@
 
         #binding-cells = <2>;
         flavor = "tap-preferred";
-        tapping-term-ms = <30>;
+        tapping-term-ms = <60>;
+        require-prior-idle-ms = <100>;
     };
 
     tap_dance_a: tap_dance_a {
@@ -169,7 +170,7 @@
         #binding-cells = <0>;
         bindings = <&kp N0>, <&kp LEFT_BRACE>;
 
-        tapping-term-ms = <30>;
+        tapping-term-ms = <80>;
     };
 
     tap_hun_u: tap_hun_u {
@@ -200,8 +201,8 @@
             slow-release;
         };
 
-        proglayer_mo {
-            bindings = <&mo 3>;
+        proglayer_tog {
+            bindings = <&tog 3>;
             key-positions = <56 39>;
             slow-release;
             layers = <0 3>;
@@ -230,6 +231,7 @@
             layers = <0>;
             timeout-ms = <30>;
             require-prior-idle-ms = <100>;
+            slow-release;
         };
 
         hoemrow_lctrl_lshift {
@@ -238,6 +240,7 @@
             layers = <0>;
             timeout-ms = <30>;
             require-prior-idle-ms = <100>;
+            slow-release;
         };
 
         homerow_rctrl {
@@ -246,6 +249,7 @@
             layers = <0>;
             timeout-ms = <30>;
             require-prior-idle-ms = <100>;
+            slow-release;
         };
 
         homerow_rshift {
@@ -254,6 +258,7 @@
             layers = <0>;
             timeout-ms = <30>;
             require-prior-idle-ms = <100>;
+            slow-release;
         };
 
         homerow_rctrl_rshift {
@@ -262,6 +267,7 @@
             layers = <0>;
             timeout-ms = <30>;
             require-prior-idle-ms = <100>;
+            slow-release;
         };
 
         prog_eq {
@@ -270,6 +276,7 @@
             layers = <0 3>;
             require-prior-idle-ms = <100>;
             timeout-ms = <30>;
+            slow-release;
         };
     };
 
@@ -284,13 +291,15 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&macro_press>,
-                <&kp KP_NUMLOCK &mo 2>,
-                <&macro_pause_for_release>,
-                <&macro_press>,
+                <&macro_tap>,
                 <&kp KP_NUMLOCK>,
+                <&macro_press>,
+                <&mo 2>,
+                <&macro_pause_for_release>,
                 <&macro_release>,
-                <&mo 2>;
+                <&mo 2>,
+                <&macro_tap>,
+                <&kp KP_NUMLOCK>;
 
             label = "NUMPAD_NUMLOCK";
         };
