@@ -50,7 +50,7 @@
         #binding-cells = <0>;
         bindings = <&kp E>, <&kp SEMI>;
 
-        tapping-term-ms = <80>;
+        tapping-term-ms = <200>;
     };
 
     tap_dance_i: tap_dance_i {
@@ -59,7 +59,7 @@
         #binding-cells = <0>;
         bindings = <&kp I>, <&kp NUBS>;
 
-        tapping-term-ms = <80>;
+        tapping-term-ms = <200>;
     };
 
     tap_dance_u: tap_dance_u {
@@ -68,7 +68,7 @@
         #binding-cells = <0>;
         bindings = <&kp U>, <&kp RIGHT_BRACE>;
 
-        tapping-term-ms = <80>;
+        tapping-term-ms = <200>;
     };
 
     tap_dance_o: tap_dance_o {
@@ -77,7 +77,7 @@
         #binding-cells = <0>;
         bindings = <&kp O>, <&kp EQUAL>;
 
-        tapping-term-ms = <80>;
+        tapping-term-ms = <200>;
     };
 
     tap_dance_alt: tap_dance_alt {
@@ -86,7 +86,7 @@
         #binding-cells = <0>;
         bindings = <&kp LALT>, <&kp RALT>;
 
-        tapping-term-ms = <100>;
+        tapping-term-ms = <200>;
     };
 
     holdtap_2: holdtap_2 {
@@ -96,8 +96,9 @@
 
         #binding-cells = <2>;
         flavor = "tap-preferred";
-        tapping-term-ms = <60>;
+        tapping-term-ms = <120>;
         require-prior-idle-ms = <100>;
+        retro-tap;
     };
 
     tap_dance_a: tap_dance_a {
@@ -106,7 +107,7 @@
         #binding-cells = <0>;
         bindings = <&kp A>, <&kp APOS>;
 
-        tapping-term-ms = <50>;
+        tapping-term-ms = <200>;
     };
 
     motog_layer: motog_layer {
@@ -124,7 +125,7 @@
         #binding-cells = <0>;
         bindings = <&numpad_numlock>, <&mo 4>;
 
-        tapping-term-ms = <75>;
+        tapping-term-ms = <200>;
     };
 
     tap_hun_o: tap_hun_o {
@@ -133,7 +134,7 @@
         #binding-cells = <0>;
         bindings = <&kp N0>, <&kp LEFT_BRACE>;
 
-        tapping-term-ms = <80>;
+        tapping-term-ms = <200>;
     };
 
     tap_hun_u: tap_hun_u {
@@ -142,7 +143,7 @@
         #binding-cells = <0>;
         bindings = <&kp MINUS>, <&kp NUHS>;
 
-        tapping-term-ms = <80>;
+        tapping-term-ms = <200>;
     };
 
     combos {
