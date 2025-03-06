@@ -103,7 +103,7 @@
         compatible = "zmk,behavior-tap-dance";
         label = "TAP_DANCE_U";
         #binding-cells = <0>;
-        bindings = <&kp U>, <&kp RIGHT_BRACE>;
+        bindings = <&kp U>, <&kp RIGHT_BRACKET>;
 
         tapping-term-ms = <200>;
     };
@@ -169,7 +169,7 @@
         compatible = "zmk,behavior-tap-dance";
         label = "TAP_HUN_O";
         #binding-cells = <0>;
-        bindings = <&kp N0>, <&kp EQUAL>;
+        bindings = <&kp N0>, <&kp LEFT_BRACKET>;
 
         tapping-term-ms = <200>;
     };
@@ -178,7 +178,7 @@
         compatible = "zmk,behavior-tap-dance";
         label = "TAP_HUN_U";
         #binding-cells = <0>;
-        bindings = <&kp MINUS>, <&kp RIGHT_BRACKET>;
+        bindings = <&kp MINUS>, <&kp NUHS>;
 
         tapping-term-ms = <200>;
     };
