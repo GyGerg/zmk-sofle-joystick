@@ -125,14 +125,14 @@
         #binding-cells = <0>;
         bindings = <&numpad_numlock>, <&mo 4>;
 
-        tapping-term-ms = <200>;
+        tapping-term-ms = <500>;
     };
 
     tap_hun_o: tap_hun_o {
         compatible = "zmk,behavior-tap-dance";
         label = "TAP_HUN_O";
         #binding-cells = <0>;
-        bindings = <&kp N0>, <&kp LEFT_BRACE>;
+        bindings = <&kp N0>, <&kp EQUAL>;
 
         tapping-term-ms = <200>;
     };
@@ -141,7 +141,7 @@
         compatible = "zmk,behavior-tap-dance";
         label = "TAP_HUN_U";
         #binding-cells = <0>;
-        bindings = <&kp MINUS>, <&kp NUHS>;
+        bindings = <&kp MINUS>, <&kp RIGHT_BRACKET>;
 
         tapping-term-ms = <200>;
     };
@@ -187,6 +187,7 @@
             layers = <0>;
             timeout-ms = <30>;
             require-prior-idle-ms = <100>;
+            slow-release;
         };
 
         homerow_lctrl {
