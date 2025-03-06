@@ -16,18 +16,18 @@ layers:
   - $$mdi:keyboard-tab$$
   - Q
   - W
-  - '&tap_dance_e'
+  - E
   - R
   - T
   - $$mdi:arrow-down-bold$$
   - Y
-  - '&tap_dance_u'
-  - '&tap_dance_i'
-  - '&tap_dance_o'
+  - U
+  - I
+  - O
   - P
   - '&tap_hun_u'
   - $$mdi:apple-keyboard-caps$$
-  - '&tap_dance_a'
+  - A
   - S
   - D
   - F
@@ -423,3 +423,30 @@ combos:
 - p: [14, 16]
   k: Sft+7
   l: [base_layer, coding]
+- p: [14, 27]
+  k: {t: '''', s: '"'}
+  l: [base_layer]
+- p: [22, 9]
+  k: NUBS
+  l: [base_layer]
+- p: [23, 10]
+  k: {t: '=', s: +}
+  l: [base_layer]
+- p: [8, 21]
+  k: {t: ']', s: '}'}
+  l: [base_layer]
+- p: [16, 3]
+  k: {t: ;, s: ':'}
+  l: [base_layer]
+- p: [21, 20]
+  k: {t: '-', s: _}
+  l: [base_layer]
+- p: [23, 24]
+  k: {t: '0', s: )}
+  l: [base_layer]
+- p: [36, 23]
+  k: {t: '[', s: '{'}
+  l: [base_layer]
+- p: [21, 34]
+  k: '#'
+  l: [base_layer]
