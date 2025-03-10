@@ -66,7 +66,7 @@ layers:
   - {t: 'Ctl+$$mdi:backspace$$', type: backspace}
   gaming:
   - $$mdi:keyboard-esc$$
-  - {t: '0', s: )}
+  - {t: '`', s: '~'}
   - {t: '1', s: '!'}
   - {t: '2', s: '@'}
   - {t: '3', s: '#'}
@@ -210,7 +210,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: Sft+., h: 'AltGr+,'}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - AltGr+W
   - Sft+.
   - {t: Sft+7, s: Sft+&}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -224,8 +224,8 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: Sft+8, h: Sft+9, s: Sft+*}
   - {t: AltGr+B, h: AltGr+N}
-  - {t: AltGr+G, h: AltGr+F}
-  - {t: AltGr+M, h: 'AltGr+,'}
+  - {t: AltGr+F, h: AltGr+G}
+  - {t: AltGr+M, h: AltGr+.}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
