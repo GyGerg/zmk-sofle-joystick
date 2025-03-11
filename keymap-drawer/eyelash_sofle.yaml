@@ -142,7 +142,7 @@ layers:
   - KP DIVIDE
   - KP MULTIPLY
   - {t: Sft+KP MINUS, h: Sft+/}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - KP NUMLOCK
   - {t: '$$mdi:transfer$$', type: trans}
   - AltGr+B
   - $$mdi:arrow-up-bold$$
