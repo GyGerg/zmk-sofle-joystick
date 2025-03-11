@@ -121,9 +121,9 @@
         compatible = "zmk,behavior-tap-dance";
         label = "TAP_NUM_NAVI";
         #binding-cells = <0>;
-        bindings = <&numpad_numlock>, <&mo 4>;
+        bindings = <&mo 2>, <&mo 4>;
 
-        tapping-term-ms = <200>;
+        tapping-term-ms = <300>;
     };
 
     tap_hun_o: tap_hun_o {
@@ -381,7 +381,7 @@
 
         numpad {
             bindings = <
-&trans  &trans     &trans    &trans     &trans  &trans    &trans  &trans                                               &trans     &kp KP_DIVIDE                &kp KP_MULTIPLY  &holdtap_2 LS(SLASH) LS(KP_MINUS)  &trans
+&trans  &trans     &trans    &trans     &trans  &trans    &trans  &trans                                               &trans     &kp KP_DIVIDE                &kp KP_MULTIPLY  &holdtap_2 LS(SLASH) LS(KP_MINUS)  &kp KP_NUMLOCK
 &trans  &kp RA(B)  &kp UP    &kp RA(N)  &trans  &trans    &trans  &holdtap_2 KP_RIGHT_PARENTHESIS KP_LEFT_PARENTHESIS  &kp KP_N7  &kp KP_N8                    &kp KP_N9        &kp KP_PLUS                        &trans
 &trans  &kp LEFT   &kp DOWN  &kp RIGHT  &trans  &trans    &trans  &trans                                               &kp KP_N4  &kp KP_N5                    &kp KP_N6        &kp KP_EQUAL                       &trans
 &trans  &trans     &trans    &trans     &trans  &trans    &trans  &trans                                               &kp KP_N1  &kp KP_N2                    &kp KP_N3        &trans                             &trans
