@@ -12,22 +12,22 @@ layers:
   - {t: '7', s: '&'}
   - {t: '8', s: '*'}
   - {t: '9', s: (}
-  - '&tap_hun_o'
+  - {t: '$$mdi:backspace$$', type: backspace}
   - $$mdi:keyboard-tab$$
   - Q
   - W
-  - '&tap_dance_e'
+  - E
   - R
   - T
   - $$mdi:arrow-down-bold$$
   - Y
-  - '&tap_dance_u'
-  - '&tap_dance_i'
-  - '&tap_dance_o'
+  - U
+  - I
+  - O
   - P
   - '&tap_hun_u'
   - $$mdi:apple-keyboard-caps$$
-  - '&tap_dance_a'
+  - A
   - S
   - D
   - F
@@ -66,7 +66,7 @@ layers:
   - {t: 'Ctl+$$mdi:backspace$$', type: backspace}
   gaming:
   - $$mdi:keyboard-esc$$
-  - {t: '0', s: )}
+  - {t: '`', s: '~'}
   - {t: '1', s: '!'}
   - {t: '2', s: '@'}
   - {t: '3', s: '#'}
@@ -142,7 +142,7 @@ layers:
   - KP DIVIDE
   - KP MULTIPLY
   - {t: Sft+KP MINUS, h: Sft+/}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - KP NUMLOCK
   - {t: '$$mdi:transfer$$', type: trans}
   - AltGr+B
   - $$mdi:arrow-up-bold$$
@@ -210,7 +210,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: Sft+., h: 'AltGr+,'}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - AltGr+W
   - Sft+.
   - {t: Sft+7, s: Sft+&}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -224,8 +224,8 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: Sft+8, h: Sft+9, s: Sft+*}
   - {t: AltGr+B, h: AltGr+N}
-  - {t: AltGr+G, h: AltGr+F}
-  - {t: AltGr+M, h: 'AltGr+,'}
+  - {t: AltGr+F, h: AltGr+G}
+  - {t: AltGr+M, h: AltGr+.}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -423,3 +423,30 @@ combos:
 - p: [14, 16]
   k: Sft+7
   l: [base_layer, coding]
+- p: [14, 27]
+  k: {t: '''', s: '"'}
+  l: [base_layer]
+- p: [22, 9]
+  k: NUBS
+  l: [base_layer]
+- p: [23, 10]
+  k: {t: '=', s: +}
+  l: [base_layer]
+- p: [8, 21]
+  k: {t: ']', s: '}'}
+  l: [base_layer]
+- p: [16, 3]
+  k: {t: ;, s: ':'}
+  l: [base_layer]
+- p: [21, 20]
+  k: {t: '-', s: _}
+  l: [base_layer]
+- p: [23, 24]
+  k: {t: '0', s: )}
+  l: [base_layer]
+- p: [36, 23]
+  k: {t: '[', s: '{'}
+  l: [base_layer]
+- p: [21, 34]
+  k: '#'
+  l: [base_layer]
