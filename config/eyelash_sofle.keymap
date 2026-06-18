@@ -77,13 +77,11 @@
                 <&macro_release>,
                 <&kp LEFT_SHIFT &mkp MB3>;
 
-            label = "SHIFT_MCLK";
         };
     };
 
     tap_dance_e: tap_dance_e {
         compatible = "zmk,behavior-tap-dance";
-        label = "TAP_DANCE_E";
         #binding-cells = <0>;
         bindings = <&kp E>, <&kp SEMI>;
 
@@ -92,7 +90,6 @@
 
     tap_dance_i: tap_dance_i {
         compatible = "zmk,behavior-tap-dance";
-        label = "TAP_DANCE_I";
         #binding-cells = <0>;
         bindings = <&kp I>, <&kp NUBS>;
 
@@ -101,7 +98,6 @@
 
     tap_dance_u: tap_dance_u {
         compatible = "zmk,behavior-tap-dance";
-        label = "TAP_DANCE_U";
         #binding-cells = <0>;
         bindings = <&kp U>, <&kp RIGHT_BRACKET>;
 
@@ -110,7 +106,6 @@
 
     tap_dance_o: tap_dance_o {
         compatible = "zmk,behavior-tap-dance";
-        label = "TAP_DANCE_O";
         #binding-cells = <0>;
         bindings = <&kp O>, <&kp EQUAL>;
 
@@ -119,7 +114,6 @@
 
     tap_dance_alt: tap_dance_alt {
         compatible = "zmk,behavior-tap-dance";
-        label = "TAP_DANCE_ALT";
         #binding-cells = <0>;
         bindings = <&kp LALT>, <&kp RALT>;
 
@@ -128,7 +122,6 @@
 
     holdtap_2: holdtap_2 {
         compatible = "zmk,behavior-hold-tap";
-        label = "HOLDTAP_2";
         bindings = <&kp>, <&kp>;
 
         #binding-cells = <2>;
@@ -140,7 +133,6 @@
 
     tap_dance_a: tap_dance_a {
         compatible = "zmk,behavior-tap-dance";
-        label = "TAP_DANCE_A";
         #binding-cells = <0>;
         bindings = <&kp A>, <&kp APOS>;
 
@@ -149,7 +141,6 @@
 
     motog_layer: motog_layer {
         compatible = "zmk,behavior-hold-tap";
-        label = "MOTOG_LAYER";
         bindings = <&mo>, <&tog>;
 
         #binding-cells = <2>;
@@ -158,7 +149,6 @@
 
     tap_num_navi: tap_num_navi {
         compatible = "zmk,behavior-tap-dance";
-        label = "TAP_NUM_NAVI";
         #binding-cells = <0>;
         bindings = <&mo 2>, <&mo 4>;
 
@@ -167,7 +157,6 @@
 
     tap_hun_o: tap_hun_o {
         compatible = "zmk,behavior-tap-dance";
-        label = "TAP_HUN_O";
         #binding-cells = <0>;
         bindings = <&kp N0>, <&kp LEFT_BRACKET>;
 
@@ -176,7 +165,6 @@
 
     tap_hun_u: tap_hun_u {
         compatible = "zmk,behavior-tap-dance";
-        label = "TAP_HUN_U";
         #binding-cells = <0>;
         bindings = <&kp MINUS>, <&kp NUHS>;
 
@@ -185,7 +173,6 @@
 
     tap_dance_bt: tap_dance_bt {
         compatible = "zmk,behavior-tap-dance";
-        label = "TAP_DANCE_BT";
         #binding-cells = <0>;
         bindings =
             <&bt BT_SEL 0>,
@@ -387,13 +374,11 @@
                 <&macro_release>,
                 <&mo 2>;
 
-            label = "NUMPAD_NUMLOCK";
         };
     };
 
     tap_dance_e: tap_dance_e {
         compatible = "zmk,behavior-tap-dance";
-        label = "TAP_DANCE_E";
         #binding-cells = <0>;
         bindings = <&kp E>, <&kp SEMI>;
 
@@ -402,7 +387,6 @@
 
     tap_dance_i: tap_dance_i {
         compatible = "zmk,behavior-tap-dance";
-        label = "TAP_DANCE_I";
         #binding-cells = <0>;
         bindings = <&kp I>, <&kp NUBS>;
 
@@ -411,7 +395,6 @@
 
     tap_dance_u: tap_dance_u {
         compatible = "zmk,behavior-tap-dance";
-        label = "TAP_DANCE_U";
         #binding-cells = <0>;
         bindings = <&kp U>, <&kp RIGHT_BRACKET>;
 
@@ -420,7 +403,6 @@
 
     tap_dance_o: tap_dance_o {
         compatible = "zmk,behavior-tap-dance";
-        label = "TAP_DANCE_O";
         #binding-cells = <0>;
         bindings = <&kp O>, <&kp EQUAL>;
 
@@ -429,7 +411,6 @@
 
     tap_dance_alt: tap_dance_alt {
         compatible = "zmk,behavior-tap-dance";
-        label = "TAP_DANCE_ALT";
         #binding-cells = <0>;
         bindings = <&kp LALT>, <&kp RALT>;
 
@@ -438,7 +419,6 @@
 
     holdtap_2: holdtap_2 {
         compatible = "zmk,behavior-hold-tap";
-        label = "HOLDTAP_2";
         bindings = <&kp>, <&kp>;
 
         #binding-cells = <2>;
@@ -450,7 +430,6 @@
 
     tap_dance_a: tap_dance_a {
         compatible = "zmk,behavior-tap-dance";
-        label = "TAP_DANCE_A";
         #binding-cells = <0>;
         bindings = <&kp A>, <&kp APOS>;
 
@@ -459,7 +438,6 @@
 
     motog_layer: motog_layer {
         compatible = "zmk,behavior-hold-tap";
-        label = "MOTOG_LAYER";
         bindings = <&mo>, <&tog>;
 
         #binding-cells = <2>;
@@ -468,7 +446,6 @@
 
     tap_num_navi: tap_num_navi {
         compatible = "zmk,behavior-tap-dance";
-        label = "TAP_NUM_NAVI";
         #binding-cells = <0>;
         bindings = <&mo 2>, <&mo 4>;
 
@@ -477,7 +454,6 @@
 
     tap_hun_o: tap_hun_o {
         compatible = "zmk,behavior-tap-dance";
-        label = "TAP_HUN_O";
         #binding-cells = <0>;
         bindings = <&kp N0>, <&kp LEFT_BRACKET>;
 
@@ -486,7 +462,6 @@
 
     tap_hun_u: tap_hun_u {
         compatible = "zmk,behavior-tap-dance";
-        label = "TAP_HUN_U";
         #binding-cells = <0>;
         bindings = <&kp MINUS>, <&kp NUHS>;
 
@@ -495,7 +470,6 @@
 
     tap_dance_bt: tap_dance_bt {
         compatible = "zmk,behavior-tap-dance";
-        label = "TAP_DANCE_BT";
         #binding-cells = <0>;
         bindings =
             <&bt BT_SEL 0>,
@@ -694,7 +668,6 @@
                 <&macro_release>,
                 <&mo 2>;
 
-            label = "NUMPAD_NUMLOCK";
         };
     };
 
@@ -712,7 +685,7 @@
 
             sensor-bindings = <&rsr_vol &rsr_trans>;
             display-name = "base_layer";
-            label = "base_layer";
+            display-name = "base_layer";
         };
 
         gaming {
@@ -738,7 +711,7 @@
             >;
 
             sensor-bindings = <&inc_dec_kp 0 0>;
-            label = "numpad";
+            display-name = "numpad";
         };
 
         coding {
@@ -751,7 +724,7 @@
             >;
 
             sensor-bindings = <&rsr_vol &rsr_trans>;
-            label = "coding";
+            display-name = "coding";
         };
 
         navi {
@@ -777,7 +750,7 @@
             >;
 
             sensor-bindings = <&rsr_vol &rsr_trans>;
-            label = "kb_controls";
+            display-name = "kb_controls";
         };
     };
 };
